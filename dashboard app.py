@@ -1,13 +1,20 @@
 # Import required libraries
+# import pandas as pd
+# import dash
+# import dash_html_components as html
+# import dash_core_components as dcc
+# from dash.dependencies import Input, Output
+# import plotly.express as px
+
 import pandas as pd
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import html
+from dash import dcc
 from dash.dependencies import Input, Output
 import plotly.express as px
 
 # Read the airline data into pandas dataframe
-spacex_df = pd.read_csv("spacex_launch_dash.csv")
+spacex_df = pd.read_csv("D:\Documents\Python Project\Cap\IBM-Applied-Data-Science-Capstone-Project-main\spacex_launch_dash.csv")
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
 
@@ -133,4 +140,4 @@ def update_scattergraph(site_dropdown,payload_slider):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server()
+    app.run()
